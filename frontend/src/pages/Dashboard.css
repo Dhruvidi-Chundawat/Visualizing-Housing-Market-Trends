@@ -1,0 +1,195 @@
+.section-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.page-header {
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: attr(data-bg);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(6rem, 18vw, 16rem);
+  color: rgba(255,255,255,0.018);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.page-header__inner { max-width: 1200px; margin: 0 auto; }
+
+.page-header__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.page-header__title em { color: var(--accent); font-style: normal; }
+
+.page-header__line {
+  width: 60px; height: 3px;
+  background: var(--accent); border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.page-header__desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 560px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Content */
+.dashboard__content {
+  padding: 0 2rem 6rem;
+  border-top: 1px solid var(--border);
+}
+
+.dashboard__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 3rem;
+}
+
+/* Tableau embed area */
+.tableau-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.tableau-placeholder {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.tableau-placeholder__icon { font-size: 3.5rem; margin-bottom: 1rem; }
+
+.tableau-placeholder h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.tableau-placeholder p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.tableau-placeholder code {
+  background: rgba(232,93,38,0.12);
+  color: var(--accent-light);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.tableau-embed-hint {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.tableau-embed-hint p { color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.75rem; }
+.tableau-embed-hint strong { color: var(--text-primary); }
+
+.tableau-embed-hint ol {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* Stat cards */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.stat-card:hover {
+  border-color: rgba(232,93,38,0.35);
+  transform: translateY(-3px);
+}
+
+.stat-card__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stat-card__value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.stat-card__trend {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.stat-card__trend.up { color: #4caf89; }
+.stat-card__trend.down { color: #e84040; }
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  .dashboard__stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .dashboard__stats { grid-template-columns: 1fr; }
+}
