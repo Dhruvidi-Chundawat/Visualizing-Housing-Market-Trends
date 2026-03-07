@@ -1,43 +1,36 @@
-# Node / React
-node_modules/
-dist/
-frontend/dist/
-
-# Vite
-.vite/
-*.local
-
-# Build output (React → Flask static)
-backend/static/react/
-
-# Data files (optional - remove if you want these tracked)
-*.csv
-*.twbx
-
-# Virtual Environment
-venv/
-env/
-
 # Python
 __pycache__/
 *.pyc
 *.pyo
-*.egg-info/
-.Python
-*.egg
+*.pyd
+*.sqlite3
 
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
+# Virtual Environment
+venv/
+env/
+.venv/
 
 # Environment variables
 .env
-.env.local
+
+# Flask
+instance/
+*.log
+
+# Node modules
+node_modules/
+
+# Vite build files
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# React cache
+.cache/
