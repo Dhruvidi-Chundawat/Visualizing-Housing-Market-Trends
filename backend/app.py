@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='static/react', static_url_path='')
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'dev-secret-change-in-production')
 
 
-# ── Dummy user database (replace with real DB later) ──────────────────────────
+# ── Dummy user database  ──────────────────────────
 users = {
     "admin": {
         "password": "123456",
